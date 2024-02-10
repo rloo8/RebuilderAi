@@ -7,10 +7,8 @@ const VideoContainer = styled.div`
   width: 100%;
   object-fit: cover;
   display: flex;
-  -webkit-box-align: center;
   align-items: center;
   flex-direction: column;
-  -webkit-box-pack: center;
   justify-content: center;
   z-index: 100;
   overflow: hidden;
@@ -118,16 +116,6 @@ function MainVideo() {
           )}
         </MainText>
       </VideoContainer>
-      <img src="/image/2ea9351f3272618ef89279bf26b522be.png" />
-      <img src="/image/2ea9351f3272618ef89279bf26b522be.png" />
-      <img src="/image/2ea9351f3272618ef89279bf26b522be.png" />
-      <img src="/image/2ea9351f3272618ef89279bf26b522be.png" />
-      <img src="/image/2ea9351f3272618ef89279bf26b522be.png" />
-      <img src="/image/2ea9351f3272618ef89279bf26b522be.png" />
-      <img src="/image/2ea9351f3272618ef89279bf26b522be.png" />
-      <img src="/image/2ea9351f3272618ef89279bf26b522be.png" />
-      <img src="/image/2ea9351f3272618ef89279bf26b522be.png" />
-      <img src="/image/2ea9351f3272618ef89279bf26b522be.png" />
     </div>
   );
 }

@@ -2,6 +2,7 @@ import styled from "styled-components";
 import HeaderMobile from "./Components/HeaderMobile";
 import HeaderPc from "./Components/HeaderPc";
 import MainVideo from "./Components/MainVideo";
+import Model3D from "./Components/Model3D";
 
 const StyledHeader = styled.div`
   @media (max-width: 768px) {
@@ -26,6 +27,7 @@ function App() {
       </StyledHeader>
 
       <MainVideo />
+      <Model3D />
     </div>
   );
 }
