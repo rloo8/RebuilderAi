@@ -3,6 +3,7 @@ import HeaderMobile from "./Components/HeaderMobile";
 import HeaderPc from "./Components/HeaderPc";
 import MainVideo from "./Components/MainVideo";
 import Model3D from "./Components/Model3D";
+import Vrin3D from "./Components/Vrin3D";
 
 const StyledHeader = styled.div`
   @media (max-width: 768px) {
@@ -20,13 +21,15 @@ const StyledHeader = styled.div`
 
 function App() {
   return (
-    <div>
+    <div style={{ height: "200vh" }}>
       <StyledHeader>
         <HeaderPc className="pc-header" />
         <HeaderMobile className="mobile-header" />
       </StyledHeader>
 
       <MainVideo />
+      <Model3D />
+      <Vrin3D />
       <Model3D />
     </div>
   );
