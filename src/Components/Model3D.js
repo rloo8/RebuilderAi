@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import styled from "styled-components";
 
 const Container = styled.div`
@@ -46,7 +46,7 @@ const StickyMenu = styled.div`
     gap: 10px;
     span {
       &:first-child {
-        font-size: 20px;
+        font-size: 17px;
       }
       font-size: 22px;
     }
@@ -116,6 +116,8 @@ const Cont = styled.div`
 
 function Model3D() {
   const [mobile, setMobile] = useState(window.innerWidth);
+  const [isTop, setIsTop] = useState(false);
+  const contentRef = useRef(null);
 
   useEffect(() => {
     const handleWidth = () => {
@@ -129,13 +131,32 @@ function Model3D() {
     };
   }, []);
 
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY;
+      const contentPosition = contentRef.current.offsetTop;
+
+      if (scrollPosition >= contentPosition) {
+        setIsTop(true);
+      } else {
+        setIsTop(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
     <Container>
       <StickyBox>
         <StickyMenu>
           <span>3D model</span>
-          <span>최적화</span>
-          <span>사용하기</span>
+          <span style={{ color: isTop ? "#BDC1C7" : "#000" }}>최적화</span>
+          <span style={{ color: isTop ? "#000" : "#BDC1C7" }}>사용하기</span>
         </StickyMenu>
       </StickyBox>
       <ContBox>
@@ -170,7 +191,7 @@ function Model3D() {
           <img src="/image/9999538286b5d557473fe73733e95acc.png" />
         </Cont>
 
-        <Cont>
+        <Cont ref={contentRef}>
           {mobile <= 600 ? (
             <div
               style={{
