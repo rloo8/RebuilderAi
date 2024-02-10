@@ -18,6 +18,9 @@ const VideoContainer = styled.div`
 `;
 const Video = styled.video`
   width: ${(props) => 640 + props.scrolled * 10}px;
+  @media screen and (max-width: 600px) {
+    width: ${(props) => 320 + props.scrolled * 10}px;
+  }
   filter: blur(${(props) => props.scrolled / 5}px);
 `;
 
@@ -39,6 +42,43 @@ const MainText = styled.div`
   }
   h4 {
     font-size: 50px;
+  }
+
+  @media screen and (min-width: 769px) and (max-width: 1279px) {
+    gap: 60px;
+    h2 {
+      font-size: 60px;
+    }
+    h3 {
+      font-size: 57px;
+    }
+    h4 {
+      font-size: 30px;
+    }
+  }
+  @media screen and (min-width: 601px) and (max-width: 768px) {
+    gap: 45px;
+    h2 {
+      font-size: 50px;
+    }
+    h3 {
+      font-size: 45px;
+    }
+    h4 {
+      font-size: 30px;
+    }
+  }
+  @media screen and (max-width: 600px) {
+    gap: 20px;
+    h2 {
+      font-size: 30px;
+    }
+    h3 {
+      font-size: 23px;
+    }
+    h4 {
+      font-size: 18px;
+    }
   }
 `;
 
