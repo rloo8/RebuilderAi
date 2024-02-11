@@ -1,3 +1,4 @@
+import { useEffect, useRef, useState } from "react";
 import styled from "styled-components";
 
 const Container = styled.div`
@@ -178,11 +179,32 @@ const BackgroundImg = styled.div`
   height: 100%;
   background: url("image/c9ebc10e9f846eafcfc76a535b9f7d4d.png") 0% 0% / cover
     no-repeat;
+
+  @media screen and (max-width: 600px) {
+    background: url("image/d0f7636d64424351b5ccfb5deb1a223a.png") 0% 0% / cover
+      no-repeat;
+  }
 `;
 
 function Vrin3D() {
+  const containerRef = useRef(null);
+  const [backgroundPositionY, setBackgroundPositionY] = useState("0%");
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const containerTop = containerRef.current.getBoundingClientRect().top;
+      setBackgroundPositionY(`${(window.innerHeight - containerTop) / 15}%`);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
-    <Container>
+    <Container ref={containerRef}>
       <Cont>
         <VrinBox>
           <VrinLogoBox>
@@ -349,7 +371,7 @@ function Vrin3D() {
         </MoreBtn>
       </Cont>
 
-      <BackgroundImg style={{ backgroundPosition: "0% 25%" }} />
+      <BackgroundImg style={{ backgroundPositionY }} />
     </Container>
   );
 }
