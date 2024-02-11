@@ -39,6 +39,26 @@ const HeaderList = styled.li`
   font-size: 16px;
   transition: all 0.2s ease-in-out 0s;
   padding: 0 60px;
+  position: relative;
+  cursor: pointer;
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: -15px;
+    left: 0;
+    width: 0;
+    height: 50px;
+    background-color: ${(props) =>
+      props.scrolled === "black" ? "rgb(20,20,20)" : "rgb(246, 247, 248)"};
+
+    transition: width 0.3s;
+    z-index: -1;
+  }
+  &:hover::after {
+    width: 100vw;
+  }
+
   @media (max-width: 600px) {
     padding: 0 20px;
   }
@@ -137,11 +157,21 @@ function HeaderMobile({ className }) {
 
       {OpenedMenu ? (
         <HeaderListBox scrolled={scrolled}>
-          <HeaderList>Service</HeaderList>
-          <HeaderList>Technology</HeaderList>
-          <HeaderList>About</HeaderList>
-          <HeaderList>Contact</HeaderList>
-          <HeaderList>KOR</HeaderList>
+          <HeaderList scrolled={scrolled}>
+            <a href="/">Service</a>
+          </HeaderList>
+          <HeaderList scrolled={scrolled}>
+            <a href="/">Technology</a>
+          </HeaderList>
+          <HeaderList scrolled={scrolled}>
+            <a href="/">About</a>
+          </HeaderList>
+          <HeaderList scrolled={scrolled}>
+            <a href="/">Contact</a>
+          </HeaderList>
+          <HeaderList scrolled={scrolled}>
+            <a href="/">KOR</a>
+          </HeaderList>
         </HeaderListBox>
       ) : null}
     </HeaderBox>
