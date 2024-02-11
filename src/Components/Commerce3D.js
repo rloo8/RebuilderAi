@@ -7,9 +7,11 @@ const Container = styled.div`
   flex-direction: column;
   gap: 30px;
   overflow: hidden;
+  margin: 0 auto;
 
   @media screen and (min-width: 1280px) {
     flex-direction: row;
+    max-width: 1200px;
   }
 
   @media screen and (min-width: 601px) and (max-width: 768px) {

@@ -57,7 +57,7 @@ table {
 body {
   font-weight: 300;
   font-family: "Pretendard Variable";
-  background: #f6f7f8;
+  background: #fff;
   line-height: 1.2;
 }
 a {

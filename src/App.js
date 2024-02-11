@@ -5,6 +5,7 @@ import MainVideo from "./Components/MainVideo";
 import Model3D from "./Components/Model3D";
 import Vrin3D from "./Components/Vrin3D";
 import SlideCont from "./Components/Commerce3D";
+import VideoCont from "./Components/VideoCont";
 
 const StyledHeader = styled.div`
   @media (max-width: 768px) {
@@ -32,6 +33,7 @@ function App() {
       <Model3D />
       <Vrin3D />
       <SlideCont />
+      <VideoCont />
     </div>
   );
 }
