@@ -33,6 +33,22 @@ const HeaderListBox = styled.ul`
 const HeaderList = styled.li`
   font-weight: 500;
   font-size: 20px;
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: rgb(23, 60, 254);
+    transition: width 0.3s;
+  }
+
+  &:hover::after {
+    width: 100%;
+  }
 `;
 
 function HeaderPc({ className }) {
@@ -81,10 +97,18 @@ function HeaderPc({ className }) {
         </svg>
 
         <HeaderListBox scrolled={scrolled}>
-          <HeaderList>Service</HeaderList>
-          <HeaderList>Technology</HeaderList>
-          <HeaderList>About</HeaderList>
-          <HeaderList>Contact</HeaderList>
+          <HeaderList>
+            <a href="/">Service</a>
+          </HeaderList>
+          <HeaderList>
+            <a href="/">Technology</a>
+          </HeaderList>
+          <HeaderList>
+            <a href="/">About</a>
+          </HeaderList>
+          <HeaderList>
+            <a href="/">Contact</a>
+          </HeaderList>
         </HeaderListBox>
 
         <svg
