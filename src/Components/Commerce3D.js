@@ -107,10 +107,22 @@ function Commerce3D() {
       </SlideBox>
 
       <MobileImgBox>
-        <img src="https://rloo8.github.io/RebuilderAi/image/slide1.png" />
-        <img src="https://rloo8.github.io/RebuilderAi/image/slide2.png" />
-        <img src="https://rloo8.github.io/RebuilderAi/image/slide3.png" />
-        <img src="https://rloo8.github.io/RebuilderAi/image/slide4.png" />
+        <img
+          src="https://rloo8.github.io/RebuilderAi/image/slide1.png"
+          alt="commerce3D"
+        />
+        <img
+          src="https://rloo8.github.io/RebuilderAi/image/slide2.png"
+          alt="commerce3D"
+        />
+        <img
+          src="https://rloo8.github.io/RebuilderAi/image/slide3.png"
+          alt="commerce3D"
+        />
+        <img
+          src="https://rloo8.github.io/RebuilderAi/image/slide4.png"
+          alt="commerce3D"
+        />
       </MobileImgBox>
     </Container>
   );

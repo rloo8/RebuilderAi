@@ -232,7 +232,10 @@ function Model3D() {
             </span>
           )}
 
-          <img src="https://rloo8.github.io/RebuilderAi/image/9999538286b5d557473fe73733e95acc.png" />
+          <img
+            src="https://rloo8.github.io/RebuilderAi/image/9999538286b5d557473fe73733e95acc.png"
+            alt="Optimization"
+          />
         </Cont>
 
         <Cont ref={contentRef}>
@@ -310,6 +313,7 @@ function Model3D() {
                   src={`https://rloo8.github.io/RebuilderAi/image/${t(
                     "service_img_mobile_ko"
                   )}.png`}
+                  alt="Usage"
                   style={{ opacity: visibleImgIndex === 0 ? 1 : 0 }}
                 />
               </div>
@@ -378,6 +382,7 @@ function Model3D() {
                   src={`https://rloo8.github.io/RebuilderAi/image/${t(
                     "service_img2_mobile_ko"
                   )}.png`}
+                  alt="Usage"
                   style={{ opacity: visibleImgIndex === 1 ? 1 : 0 }}
                 />
               </div>
@@ -408,6 +413,7 @@ function Model3D() {
                     src={`https://rloo8.github.io/RebuilderAi/image/${t(
                       "service_img_pc_ko"
                     )}.png`}
+                    alt="Usage"
                   />
                 </div>
 
@@ -424,6 +430,7 @@ function Model3D() {
                     src={`https://rloo8.github.io/RebuilderAi/image/${t(
                       "service_img2_pc_ko"
                     )}.png`}
+                    alt="Usage"
                   />
                 </div>
               </div>

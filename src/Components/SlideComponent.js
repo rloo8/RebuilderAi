@@ -42,28 +42,52 @@ function SlideComponent() {
     <div className="slider-container">
       <Slider {...settings}>
         <div>
-          <SlideImg src="https://rloo8.github.io/RebuilderAi/image/slide1.png" />
+          <SlideImg
+            src="https://rloo8.github.io/RebuilderAi/image/slide1.png"
+            alt="commerce3D"
+          />
         </div>
         <div>
-          <SlideImg src="https://rloo8.github.io/RebuilderAi/image/slide2.png" />
+          <SlideImg
+            src="https://rloo8.github.io/RebuilderAi/image/slide2.png"
+            alt="commerce3D"
+          />
         </div>
         <div>
-          <SlideImg src="https://rloo8.github.io/RebuilderAi/image/slide3.png" />
+          <SlideImg
+            src="https://rloo8.github.io/RebuilderAi/image/slide3.png"
+            alt="commerce3D"
+          />
         </div>
         <div>
-          <SlideImg src="https://rloo8.github.io/RebuilderAi/image/slide4.png" />
+          <SlideImg
+            src="https://rloo8.github.io/RebuilderAi/image/slide4.png"
+            alt="commerce3D"
+          />
         </div>
         <div>
-          <SlideImg src="https://rloo8.github.io/RebuilderAi/image/slide1.png" />
+          <SlideImg
+            src="https://rloo8.github.io/RebuilderAi/image/slide1.png"
+            alt="commerce3D"
+          />
         </div>
         <div>
-          <SlideImg src="https://rloo8.github.io/RebuilderAi/image/slide2.png" />
+          <SlideImg
+            src="https://rloo8.github.io/RebuilderAi/image/slide2.png"
+            alt="commerce3D"
+          />
         </div>
         <div>
-          <SlideImg src="https://rloo8.github.io/RebuilderAi/image/slide3.png" />
+          <SlideImg
+            src="https://rloo8.github.io/RebuilderAi/image/slide3.png"
+            alt="commerce3D"
+          />
         </div>
         <div>
-          <SlideImg src="https://rloo8.github.io/RebuilderAi/image/slide4.png" />
+          <SlideImg
+            src="https://rloo8.github.io/RebuilderAi/image/slide4.png"
+            alt="commerce3D"
+          />
         </div>
       </Slider>
     </div>
