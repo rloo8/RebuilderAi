@@ -102,8 +102,6 @@ function HeaderPc({ className }) {
     };
   }, []);
 
-  const showLanguage = () => {};
-
   const { i18n } = useTranslation();
 
   const changeLanguage = (lang) => {

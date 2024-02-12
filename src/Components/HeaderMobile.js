@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
 import styled from "styled-components";
 
 const HeaderBox = styled.header`
@@ -67,6 +68,12 @@ const HeaderList = styled.li`
 function HeaderMobile({ className }) {
   const [scrolled, setScrolled] = useState("black");
   const [OpenedMenu, setOpenedMenu] = useState(false);
+
+  const { i18n } = useTranslation();
+
+  const changeLanguage = (lang) => {
+    i18n.changeLanguage(lang);
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -169,8 +176,29 @@ function HeaderMobile({ className }) {
           <HeaderList scrolled={scrolled}>
             <a href="/">Contact</a>
           </HeaderList>
-          <HeaderList scrolled={scrolled}>
-            <a href="/">KOR</a>
+          <HeaderList
+            scrolled={scrolled}
+            style={{ display: "flex", gap: "7px", alignItems: "center" }}
+          >
+            <span
+              onClick={() => changeLanguage("ko")}
+              style={{ color: i18n.language !== "ko" && "#999" }}
+            >
+              KOR
+            </span>
+            <div
+              style={{
+                width: "2px",
+                height: "13px",
+                background: "rgb(111, 117, 123)",
+              }}
+            ></div>
+            <span
+              onClick={() => changeLanguage("en")}
+              style={{ color: i18n.language !== "en" && "#999" }}
+            >
+              ENG
+            </span>
           </HeaderList>
         </HeaderListBox>
       ) : null}
