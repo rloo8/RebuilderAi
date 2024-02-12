@@ -233,7 +233,7 @@ function Model3D() {
             </span>
           )}
 
-          <img src="/image/9999538286b5d557473fe73733e95acc.png" />
+          <img src="https://rloo8.github.io/RebuilderAi/image/9999538286b5d557473fe73733e95acc.png" />
         </Cont>
 
         <Cont ref={contentRef}>
@@ -294,13 +294,17 @@ function Model3D() {
 
                 <video loop muted autoPlay>
                   <source
-                    src={`/image/${t("service_video_mobile_ko")}.mp4`}
+                    src={`https://rloo8.github.io/RebuilderAi/image/${t(
+                      "service_video_mobile_ko"
+                    )}.mp4`}
                     type="video/mp4"
                   />
                 </video>
 
                 <img
-                  src={`/image/${t("service_img_mobile_ko")}.png`}
+                  src={`https://rloo8.github.io/RebuilderAi/image/${t(
+                    "service_img_mobile_ko"
+                  )}.png`}
                   style={{ opacity: visibleImgIndex === 0 ? 1 : 0 }}
                 />
               </div>
@@ -352,13 +356,17 @@ function Model3D() {
 
                 <video loop muted autoPlay>
                   <source
-                    src={`/image/${t("service_video2_mobile_ko")}.mp4`}
+                    src={`https://rloo8.github.io/RebuilderAi/image/${t(
+                      "service_video2_mobile_ko"
+                    )}.mp4`}
                     type="video/mp4"
                   />
                 </video>
 
                 <img
-                  src={`/image/${t("service_img2_mobile_ko")}.png`}
+                  src={`https://rloo8.github.io/RebuilderAi/image/${t(
+                    "service_img2_mobile_ko"
+                  )}.png`}
                   style={{ opacity: visibleImgIndex === 1 ? 1 : 0 }}
                 />
               </div>
@@ -379,21 +387,33 @@ function Model3D() {
                 <div key={t("service_video_pc_ko")}>
                   <video loop muted autoPlay>
                     <source
-                      src={`/image/${t("service_video_pc_ko")}.mp4`}
+                      src={`https://rloo8.github.io/RebuilderAi/image/${t(
+                        "service_video_pc_ko"
+                      )}.mp4`}
                       type="video/mp4"
                     />
                   </video>
-                  <img src={`/image/${t("service_img_pc_ko")}.png`} />
+                  <img
+                    src={`https://rloo8.github.io/RebuilderAi/image/${t(
+                      "service_img_pc_ko"
+                    )}.png`}
+                  />
                 </div>
 
                 <div key={t("service_video2_pc_ko")}>
                   <video loop muted autoPlay>
                     <source
-                      src={`/image/${t("service_video2_pc_ko")}.mp4`}
+                      src={`https://rloo8.github.io/RebuilderAi/image/${t(
+                        "service_video2_pc_ko"
+                      )}.mp4`}
                       type="video/mp4"
                     />
                   </video>
-                  <img src={`/image/${t("service_img2_pc_ko")}.png`} />
+                  <img
+                    src={`https://rloo8.github.io/RebuilderAi/image/${t(
+                      "service_img2_pc_ko"
+                    )}.png`}
+                  />
                 </div>
               </div>
             </>

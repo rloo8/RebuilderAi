@@ -42,28 +42,28 @@ function SlideComponent() {
     <div className="slider-container">
       <Slider {...settings}>
         <div>
-          <SlideImg src="image/slide1.png" />
+          <SlideImg src="https://rloo8.github.io/RebuilderAi/image/slide1.png" />
         </div>
         <div>
-          <SlideImg src="image/slide2.png" />
+          <SlideImg src="https://rloo8.github.io/RebuilderAi/image/slide2.png" />
         </div>
         <div>
-          <SlideImg src="image/slide3.png" />
+          <SlideImg src="https://rloo8.github.io/RebuilderAi/image/slide3.png" />
         </div>
         <div>
-          <SlideImg src="image/slide4.png" />
+          <SlideImg src="https://rloo8.github.io/RebuilderAi/image/slide4.png" />
         </div>
         <div>
-          <SlideImg src="image/slide1.png" />
+          <SlideImg src="https://rloo8.github.io/RebuilderAi/image/slide1.png" />
         </div>
         <div>
-          <SlideImg src="image/slide2.png" />
+          <SlideImg src="https://rloo8.github.io/RebuilderAi/image/slide2.png" />
         </div>
         <div>
-          <SlideImg src="image/slide3.png" />
+          <SlideImg src="https://rloo8.github.io/RebuilderAi/image/slide3.png" />
         </div>
         <div>
-          <SlideImg src="image/slide4.png" />
+          <SlideImg src="https://rloo8.github.io/RebuilderAi/image/slide4.png" />
         </div>
       </Slider>
     </div>

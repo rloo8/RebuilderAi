@@ -177,12 +177,12 @@ const BackgroundImg = styled.div`
   right: 0px;
   width: 100%;
   height: 100%;
-  background: url("image/c9ebc10e9f846eafcfc76a535b9f7d4d.png") 0% 0% / cover
-    no-repeat;
+  background: url("https://rloo8.github.io/RebuilderAi/image/c9ebc10e9f846eafcfc76a535b9f7d4d.png")
+    0% 0% / cover no-repeat;
 
   @media screen and (max-width: 600px) {
-    background: url("image/d0f7636d64424351b5ccfb5deb1a223a.png") 0% 0% / cover
-      no-repeat;
+    background: url("https://rloo8.github.io/RebuilderAi/image/d0f7636d64424351b5ccfb5deb1a223a.png")
+      0% 0% / cover no-repeat;
   }
 `;
 

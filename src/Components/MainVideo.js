@@ -99,7 +99,10 @@ function MainVideo() {
     <div>
       <VideoContainer scrolled={scrolled}>
         <Video loop muted autoPlay scrolled={scrolled}>
-          <source src="/image/main_video.mp4" type="video/mp4" />
+          <source
+            src="https://rloo8.github.io/RebuilderAi/image/main_video.mp4"
+            type="video/mp4"
+          />
         </Video>
         <MainText>
           {scrolled >= 300 ? (
