@@ -1,6 +1,5 @@
 import { useEffect, useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
-import i18next from "../i18n/i18n";
 import styled from "styled-components";
 import i18n from "../i18n/i18n";
 
@@ -292,7 +291,13 @@ function Model3D() {
                   </svg>
                 </div>
 
-                <video loop muted autoPlay playsInline>
+                <video
+                  loop
+                  muted
+                  autoPlay
+                  playsInline
+                  key={t("service_video_mobile_ko")}
+                >
                   <source
                     src={`https://rloo8.github.io/RebuilderAi/image/${t(
                       "service_video_mobile_ko"
@@ -354,7 +359,13 @@ function Model3D() {
                   </svg>
                 </div>
 
-                <video loop muted autoPlay playsInline>
+                <video
+                  loop
+                  muted
+                  autoPlay
+                  playsInline
+                  key={t("service_video2_mobile_ko")}
+                >
                   <source
                     src={`https://rloo8.github.io/RebuilderAi/image/${t(
                       "service_video2_mobile_ko"
