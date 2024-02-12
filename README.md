@@ -1,71 +1,25 @@
-# Getting Started with Create React App
+## 리빌더에이아이 홈페이지 service 페이지 클론코딩
+### 배포 페이지  https://rloo8.github.io/RebuilderAi
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+#### 조건
+1. React 사용
+2. 반응형 웹 구현
+   * 큰 데스크탑: 1280px ~
+   * 작은 데스크탑: 1025px ~ 1280px
+   * 노트북: 769px ~ 1024px
+   * 태블릿: 601px ~ 768px
+   * 모바일: ~ 600px
+3. 화면 및 애니메이션 효과 적용
 
-## Available Scripts
+#### 목적
+1. React 및 라이브러리를 능숙하게 사용할 수 있는지
+2. 동영상 및 이미지 파일을 다룰 수 있는지
+3. media-query를 이용하여 반응형 웹을 구현할 수 있는지
+4. Vanilla JS, CSS를 활용하여 화면 및 애니메이션 효과를 적용할 수 있는지
 
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-# RebuilderAi
+#### 구현 상세
+1. Footer만 제외하고 Header를 포함해서 구현해주세요.
+2. 언어 변경(한글 ↔ 영문, 기본값은 한글)이 가능하도록 구현해주세요.
+3. 디바이스 별 동영상, 이미지 파일들은 개발자 도구 > 네트워크 탭을 통해 다운로드 받아주세요.
+4. 폰트는 Pretendard를 사용해주세요.(https://github.com/orioncactus/pretendard)
+5. 최대한 리빌더에이아이 홈페이지 service 페이지와(https://rebuilderai.com/service) 비슷하게 구현해주세요. 
