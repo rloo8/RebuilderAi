@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import styled from "styled-components";
 
 const Container = styled.div`
+  background: #f6f7f8;
   margin: 0 auto;
   display: flex;
   width: 100%;
@@ -64,15 +65,33 @@ const Cont = styled.div`
     line-height: 1.7em;
   }
   img {
-    padding-top: 60px;
+    padding-top: 40px;
     width: 100%;
   }
   div {
     display: flex;
-    gap: 2%;
-    padding-top: 60px;
+    gap: 3%;
+    padding-top: 20px;
+    position: relative;
+    svg {
+      width: 30px;
+      z-index: 100;
+      cursor: pointer;
+    }
     video {
-      width: 49%;
+      width: 100%;
+    }
+    img {
+      width: 100%;
+      position: absolute;
+      padding-top: 0;
+      opacity: 100;
+      transition: all 0.3s ease-in-out;
+      @media screen and (min-width: 601px) {
+        &:hover {
+          opacity: 1;
+        }
+      }
     }
   }
 
@@ -105,11 +124,8 @@ const Cont = styled.div`
     div {
       flex-direction: column;
       justify-content: center;
+      align-items: center;
       padding-top: 0;
-      video {
-        margin: 0 auto;
-        width: 70%;
-      }
     }
   }
 `;
@@ -117,6 +133,7 @@ const Cont = styled.div`
 function Model3D() {
   const [mobile, setMobile] = useState(window.innerWidth);
   const [isTop, setIsTop] = useState(false);
+  const [visibleImgIndex, setVisibleImgIndex] = useState(null);
   const contentRef = useRef(null);
 
   useEffect(() => {
@@ -149,6 +166,11 @@ function Model3D() {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
+
+  const onClick = (index) => {
+    console.log(index);
+    setVisibleImgIndex(index === visibleImgIndex ? null : index);
+  };
 
   return (
     <Container>
@@ -203,27 +225,120 @@ function Model3D() {
                 3D 모델 사용하기
               </span>
               <span>
-                3D 모델의 로딩 시간을 최소화하고 용량 제한 없이
+                리빌더AI의 3D 뷰어를 이용하여, 간편하게
                 <br />
-                다양한 플랫폼에서 사용해보세요.
+                색감, 그림자, 빛의 세기를 원하는 대로 조절할 수 있습니다.
               </span>
-              <video loop muted autoPlay>
-                <source
-                  src="/image/service_video_mobile_ko.mp4"
-                  type="video/mp4"
+
+              <div>
+                <div
+                  onClick={() => onClick(0)}
+                  style={{ position: "absolute", bottom: 15, right: 15 }}
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    strokeWidth="1.5"
+                    stroke="#777"
+                    style={{
+                      display: visibleImgIndex === 0 ? "none" : "block",
+                    }}
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M12 9v6m3-3H9m12 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
+                    />
+                  </svg>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    strokeWidth="1.5"
+                    stroke="#fff"
+                    style={{
+                      display: visibleImgIndex === 0 ? "block" : "none",
+                    }}
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="m9.75 9.75 4.5 4.5m0-4.5-4.5 4.5M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
+                    />
+                  </svg>
+                </div>
+
+                <video loop muted autoPlay>
+                  <source
+                    src="/image/service_video_mobile_ko.mp4"
+                    type="video/mp4"
+                  />
+                </video>
+
+                <img
+                  src="/image/04bc929425902a1952f93b531e4fa562.png"
+                  style={{ opacity: visibleImgIndex === 0 ? 1 : 0 }}
                 />
-              </video>
+              </div>
+
               <span>
                 3D 제품에 태그를 추가하여 공유할 수 있으며
                 <br />
                 편집한 3D 뷰어는 웹 쇼핑몰에도 사용할 수 있습니다.
               </span>
-              <video loop muted autoPlay>
-                <source
-                  src="/image/service_video2_mobile_ko.mp4"
-                  type="video/mp4"
+
+              <div>
+                <div
+                  onClick={() => onClick(1)}
+                  style={{ position: "absolute", bottom: 15, right: 15 }}
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    strokeWidth="1.5"
+                    stroke="#777"
+                    style={{
+                      display: visibleImgIndex === 1 ? "none" : "block",
+                    }}
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M12 9v6m3-3H9m12 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
+                    />
+                  </svg>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    strokeWidth="1.5"
+                    stroke="#fff"
+                    style={{
+                      display: visibleImgIndex === 1 ? "block" : "none",
+                    }}
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="m9.75 9.75 4.5 4.5m0-4.5-4.5 4.5M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
+                    />
+                  </svg>
+                </div>
+
+                <video loop muted autoPlay>
+                  <source
+                    src="/image/service_video2_mobile_ko.mp4"
+                    type="video/mp4"
+                  />
+                </video>
+
+                <img
+                  src="/image/c4bd732680852857db7a52c326ed936a.png"
+                  style={{ opacity: visibleImgIndex === 1 ? 1 : 0 }}
                 />
-              </video>
+              </div>
             </div>
           ) : (
             <>
@@ -234,19 +349,27 @@ function Model3D() {
                 3D 제품에 태그를 추가하여 공유할 수 있으며 편집한 3D 뷰어는 웹
                 쇼핑몰에도 사용할 수 있습니다.
               </span>
+
               <div>
-                <video loop muted autoPlay>
-                  <source
-                    src="/image/service_video_pc_ko.mp4"
-                    type="video/mp4"
-                  />
-                </video>
-                <video loop muted autoPlay>
-                  <source
-                    src="/image/service_video2_pc_ko.mp4"
-                    type="video/mp4"
-                  />
-                </video>
+                <div>
+                  <video loop muted autoPlay>
+                    <source
+                      src="/image/service_video_pc_ko.mp4"
+                      type="video/mp4"
+                    />
+                  </video>
+                  <img src="/image/99567f7e798bef1d737591eb22041288.png" />
+                </div>
+
+                <div>
+                  <video loop muted autoPlay>
+                    <source
+                      src="/image/service_video2_pc_ko.mp4"
+                      type="video/mp4"
+                    />
+                  </video>
+                  <img src="/image/c25c93111cf20179e90c42581fd82621.png" />
+                </div>
               </div>
             </>
           )}
