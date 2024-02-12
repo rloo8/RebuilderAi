@@ -1,8 +1,10 @@
 import { useEffect, useRef, useState } from "react";
+import { useTranslation } from "react-i18next";
+import i18next from "../i18n/i18n";
 import styled from "styled-components";
+import i18n from "../i18n/i18n";
 
 const Container = styled.div`
-  background: #f6f7f8;
   margin: 0 auto;
   display: flex;
   width: 100%;
@@ -35,6 +37,9 @@ const StickyMenu = styled.div`
     }
     font-size: 50px;
     font-weight: 600;
+    &.english {
+      font-size: 35px;
+    }
   }
 
   @media screen and (min-width: 769px) and (max-width: 1279px) {
@@ -50,6 +55,9 @@ const StickyMenu = styled.div`
         font-size: 17px;
       }
       font-size: 22px;
+      &.english {
+        font-size: 15px;
+      }
     }
   }
 `;
@@ -63,6 +71,7 @@ const Cont = styled.div`
     font-size: 25px;
     font-weight: 500;
     line-height: 1.7em;
+    white-space: pre-line;
   }
   img {
     padding-top: 40px;
@@ -85,7 +94,7 @@ const Cont = styled.div`
       width: 100%;
       position: absolute;
       padding-top: 0;
-      opacity: 100;
+      opacity: 0;
       transition: all 0.3s ease-in-out;
       @media screen and (min-width: 601px) {
         &:hover {
@@ -136,6 +145,9 @@ function Model3D() {
   const [visibleImgIndex, setVisibleImgIndex] = useState(null);
   const contentRef = useRef(null);
 
+  const { t } = useTranslation();
+  const isEnglish = i18n.language === "en";
+
   useEffect(() => {
     const handleWidth = () => {
       setMobile(window.innerWidth);
@@ -168,7 +180,6 @@ function Model3D() {
   }, []);
 
   const onClick = (index) => {
-    console.log(index);
     setVisibleImgIndex(index === visibleImgIndex ? null : index);
   };
 
@@ -177,8 +188,18 @@ function Model3D() {
       <StickyBox>
         <StickyMenu>
           <span>3D model</span>
-          <span style={{ color: isTop ? "#BDC1C7" : "#000" }}>최적화</span>
-          <span style={{ color: isTop ? "#000" : "#BDC1C7" }}>사용하기</span>
+          <span
+            className={(isEnglish && "english").toString()}
+            style={{ color: isTop ? "#BDC1C7" : "#000" }}
+          >
+            {t("최적화")}
+          </span>
+          <span
+            className={(isEnglish && "english").toString()}
+            style={{ color: isTop ? "#000" : "#BDC1C7" }}
+          >
+            {t("사용하기")}
+          </span>
         </StickyMenu>
       </StickyBox>
       <ContBox>
@@ -192,21 +213,23 @@ function Model3D() {
               }}
             >
               <span style={{ fontSize: "16px", fontWeight: 600 }}>
-                3D 모델 최적화
+                {t("3D 모델 최적화")}
               </span>
               <span>
-                3D 모델의 로딩 시간을 최소화하고 용량 제한 없이
-                <br />
-                다양한 플랫폼에서 사용해보세요.
+                {t(
+                  "3D 모델의 로딩 시간을 최소화하고 용량 제한 없이\n다양한 플랫폼에서 사용해보세요."
+                )}
               </span>
             </div>
           ) : (
             <span>
-              3D 파일의 품질을 유지한 채 원하는 용량과 폴리곤으로 최적화하여
-              제공합니다.
+              {t(
+                "3D 파일의 품질을 유지한 채 원하는 용량과 폴리곤으로 최적화하여 제공합니다."
+              )}
               <br />
-              로딩 시간을 최소화하고 용량 제한 없이 다양한 플랫폼에 업로드
-              해보세요.
+              {t(
+                "로딩 시간을 최소화하고 용량 제한 없이 다양한 플랫폼에 업로드 해보세요."
+              )}
             </span>
           )}
 
@@ -222,12 +245,12 @@ function Model3D() {
               }}
             >
               <span style={{ fontSize: "16px", fontWeight: 600 }}>
-                3D 모델 사용하기
+                {t("3D 모델 사용하기")}
               </span>
               <span>
-                리빌더AI의 3D 뷰어를 이용하여, 간편하게
-                <br />
-                색감, 그림자, 빛의 세기를 원하는 대로 조절할 수 있습니다.
+                {t(
+                  "리빌더AI의 3D 뷰어를 이용하여, 간편하게\n색감, 그림자, 빛의 세기를 원하는 대로 조절할 수 있습니다."
+                )}
               </span>
 
               <div>
@@ -271,21 +294,21 @@ function Model3D() {
 
                 <video loop muted autoPlay>
                   <source
-                    src="/image/service_video_mobile_ko.mp4"
+                    src={`/image/${t("service_video_mobile_ko")}.mp4`}
                     type="video/mp4"
                   />
                 </video>
 
                 <img
-                  src="/image/04bc929425902a1952f93b531e4fa562.png"
+                  src={`/image/${t("service_img_mobile_ko")}.png`}
                   style={{ opacity: visibleImgIndex === 0 ? 1 : 0 }}
                 />
               </div>
 
               <span>
-                3D 제품에 태그를 추가하여 공유할 수 있으며
-                <br />
-                편집한 3D 뷰어는 웹 쇼핑몰에도 사용할 수 있습니다.
+                {t(
+                  "3D 제품에 태그를 추가하여 공유할 수 있으며\n편집한 3D 뷰어는 웹 쇼핑몰에도 사용할 수 있습니다."
+                )}
               </span>
 
               <div>
@@ -329,13 +352,13 @@ function Model3D() {
 
                 <video loop muted autoPlay>
                   <source
-                    src="/image/service_video2_mobile_ko.mp4"
+                    src={`/image/${t("service_video2_mobile_ko")}.mp4`}
                     type="video/mp4"
                   />
                 </video>
 
                 <img
-                  src="/image/c4bd732680852857db7a52c326ed936a.png"
+                  src={`/image/${t("service_img2_mobile_ko")}.png`}
                   style={{ opacity: visibleImgIndex === 1 ? 1 : 0 }}
                 />
               </div>
@@ -343,32 +366,34 @@ function Model3D() {
           ) : (
             <>
               <span>
-                리빌더AI의 3D 뷰어를 이용하여, 간편하게 색감, 그림자, 빛의
-                세기를 원하는 대로 조절할 수 있습니다.
+                {t(
+                  "리빌더AI의 3D 뷰어를 이용하여, 간편하게 색감, 그림자, 빛의 세기를 원하는 대로 조절할 수 있습니다."
+                )}
                 <br />
-                3D 제품에 태그를 추가하여 공유할 수 있으며 편집한 3D 뷰어는 웹
-                쇼핑몰에도 사용할 수 있습니다.
+                {t(
+                  "3D 제품에 태그를 추가하여 공유할 수 있으며 편집한 3D 뷰어는 웹 쇼핑몰에도 사용할 수 있습니다."
+                )}
               </span>
 
               <div>
-                <div>
+                <div key={t("service_video_pc_ko")}>
                   <video loop muted autoPlay>
                     <source
-                      src="/image/service_video_pc_ko.mp4"
+                      src={`/image/${t("service_video_pc_ko")}.mp4`}
                       type="video/mp4"
                     />
                   </video>
-                  <img src="/image/99567f7e798bef1d737591eb22041288.png" />
+                  <img src={`/image/${t("service_img_pc_ko")}.png`} />
                 </div>
 
-                <div>
+                <div key={t("service_video2_pc_ko")}>
                   <video loop muted autoPlay>
                     <source
-                      src="/image/service_video2_pc_ko.mp4"
+                      src={`/image/${t("service_video2_pc_ko")}.mp4`}
                       type="video/mp4"
                     />
                   </video>
-                  <img src="/image/c25c93111cf20179e90c42581fd82621.png" />
+                  <img src={`/image/${t("service_img2_pc_ko")}.png`} />
                 </div>
               </div>
             </>

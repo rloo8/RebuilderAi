@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import { useTranslation } from "react-i18next";
 import styled from "styled-components";
 
 const Container = styled.div`
@@ -111,6 +112,7 @@ const VrinSpan = styled.div`
   font-weight: 500;
   line-height: 1.3;
   color: #bdc1c7;
+  white-space: pre-line;
 
   @media screen and (min-width: 769px) and (max-width: 1024px) {
     font-size: 17px;
@@ -125,7 +127,7 @@ const VrinSpan = styled.div`
 `;
 
 const MoreBtn = styled.div`
-  width: 152px;
+  width: fit-content;
   display: flex;
   gap: 10px;
   font-size: 20px;
@@ -142,7 +144,6 @@ const MoreBtn = styled.div`
   }
 
   @media screen and (min-width: 769px) and (max-width: 1024px) {
-    width: 123px;
     font-size: 15px;
     margin-top: 30px;
     padding: 10px 13px;
@@ -151,7 +152,6 @@ const MoreBtn = styled.div`
     }
   }
   @media screen and (max-width: 768px) {
-    width: 85px;
     font-size: 10px;
     margin-top: 15px;
     padding: 6px 8px;
@@ -189,6 +189,8 @@ const BackgroundImg = styled.div`
 function Vrin3D() {
   const containerRef = useRef(null);
   const [backgroundPositionY, setBackgroundPositionY] = useState("0%");
+
+  const { t } = useTranslation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -347,18 +349,18 @@ function Vrin3D() {
               </defs>
             </svg>
             <div style={{ display: "flex", flexDirection: "column" }}>
-              <span>AI로 만드는 3D 모델</span>
+              <span>{t("AI로 만드는 3D 모델")}</span>
               <span>VRIN 3D</span>
             </div>
           </VrinLogoBox>
           <VrinSpan>
-            인공지능으로 자동 생성되는 3D 모델과
-            <br />
-            손쉬운 편집을 경험해보세요.
+            {t(
+              "인공지능으로 자동 생성되는 3D 모델과\n손쉬운 편집을 경험해보세요."
+            )}
           </VrinSpan>
         </VrinBox>
         <MoreBtn>
-          더 알아보기
+          {t("더 알아보기")}
           <svg
             className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-vubbuv"
             focusable="false"

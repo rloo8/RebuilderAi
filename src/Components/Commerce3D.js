@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import SlideComponent from "./SlideComponent";
+import { useTranslation } from "react-i18next";
 
 const Container = styled.div`
   padding-top: 200px;
@@ -11,6 +12,8 @@ const Container = styled.div`
 
   @media screen and (min-width: 1280px) {
     flex-direction: row;
+    align-items: center;
+    padding-top: 250px;
     max-width: 1200px;
   }
 
@@ -30,6 +33,7 @@ const TextBox = styled.div`
   font-weight: 600;
   text-align: center;
   line-height: 1.4;
+  white-space: pre-line;
   h2 {
     font-size: 45px;
   }
@@ -42,7 +46,6 @@ const TextBox = styled.div`
   }
   @media screen and (min-width: 1280px) {
     text-align: left;
-    padding: 100px 0 0 30px;
   }
 
   @media screen and (max-width: 768px) {
@@ -85,15 +88,17 @@ const MobileImgBox = styled.div`
 `;
 
 function Commerce3D() {
+  const { t } = useTranslation();
+
   return (
     <Container>
       <TextBox>
-        <h3>이커머스 마케팅</h3>
-        <h2>커머스 3D 아이템 제작</h2>
+        <h3>{t("이커머스 마케팅")}</h3>
+        <h2>{t("커머스 3D 아이템 제작")}</h2>
         <h4>
-          다양한 플랫폼과 서비스에서
-          <br />
-          사진 기반의 3D 스캔 솔루션을 이용해보세요.
+          {t(
+            "다양한 플랫폼과 서비스에서\n사진 기반의 3D 스캔 솔루션을 이용해보세요."
+          )}
         </h4>
       </TextBox>
 
