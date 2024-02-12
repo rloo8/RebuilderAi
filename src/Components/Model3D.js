@@ -292,7 +292,7 @@ function Model3D() {
                   </svg>
                 </div>
 
-                <video loop muted autoPlay>
+                <video loop muted autoPlay playsInline>
                   <source
                     src={`https://rloo8.github.io/RebuilderAi/image/${t(
                       "service_video_mobile_ko"
@@ -354,7 +354,7 @@ function Model3D() {
                   </svg>
                 </div>
 
-                <video loop muted autoPlay>
+                <video loop muted autoPlay playsInline>
                   <source
                     src={`https://rloo8.github.io/RebuilderAi/image/${t(
                       "service_video2_mobile_ko"
@@ -385,7 +385,7 @@ function Model3D() {
 
               <div>
                 <div key={t("service_video_pc_ko")}>
-                  <video loop muted autoPlay>
+                  <video loop muted autoPlay playsInline>
                     <source
                       src={`https://rloo8.github.io/RebuilderAi/image/${t(
                         "service_video_pc_ko"
@@ -401,7 +401,7 @@ function Model3D() {
                 </div>
 
                 <div key={t("service_video2_pc_ko")}>
-                  <video loop muted autoPlay>
+                  <video loop muted autoPlay playsInline>
                     <source
                       src={`https://rloo8.github.io/RebuilderAi/image/${t(
                         "service_video2_pc_ko"

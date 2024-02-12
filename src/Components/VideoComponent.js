@@ -93,7 +93,7 @@ function VideoComponent({ title, description, videoSource }) {
       </TextBox>
 
       <VideoBox>
-        <Video loop muted autoPlay ref={videoRef}>
+        <Video loop muted autoPlay playsInline ref={videoRef}>
           <source src={videoSource} type="video/mp4" />
         </Video>
         <PlayButton onClick={togglePlay}>

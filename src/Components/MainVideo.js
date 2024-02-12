@@ -10,7 +10,7 @@ const VideoContainer = styled.div`
   align-items: center;
   flex-direction: column;
   justify-content: center;
-  z-index: 100;
+  z-index: 101;
   overflow: hidden;
   background: #000;
 `;
@@ -98,7 +98,7 @@ function MainVideo() {
   return (
     <div>
       <VideoContainer scrolled={scrolled}>
-        <Video loop muted autoPlay scrolled={scrolled}>
+        <Video loop muted autoPlay playsInline scrolled={scrolled}>
           <source
             src="https://rloo8.github.io/RebuilderAi/image/main_video.mp4"
             type="video/mp4"
